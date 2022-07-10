@@ -16,30 +16,21 @@ use App\Http\Controllers\OeuvreController;
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
 
+//Accueil
 Route::get('/',[AccueilController::class,'index'])->name('accueil');
 
 
 
-//route to ItemController@show
+//Items (pour les faire des tests)
 Route::get('/item/{id}',[ItemController::class,'show'])->whereNumber('id');
-Route::get('/oeuvre/{id}',[OeuvreController::class,'show'])->whereNumber('id');
+
+//Oeuvres
+Route::get('/oeuvres/create',[OeuvreController::class,'create'])->name('oeuvres.create');
+Route::post('/oeuvres/create',[OeuvreController::class,'store'])->name('oeuvres.store');
+Route::get('/oeuvre/{id}',[OeuvreController::class,'show'])->whereNumber('id')->name('oeuvres.show');
 Route::get('/oeuvres',[OeuvreController::class,'index'])->name('oeuvres');
 
 
-/*
 
 
-Route::get('/testText', function () {
-    return 'test';
-});
-
-Route::get('/testJSON', function () {
-    return response()->json(['name' => 'Abigail', 'state' => 'CA']);
-});
-*/
