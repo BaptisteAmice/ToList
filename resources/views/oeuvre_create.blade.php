@@ -8,9 +8,10 @@
 <form method="POST" action="{{ route('oeuvres.store') }}">
     @csrf
     <input type="text" name="titre" placeholder="Titre">
-    <input type="text" name="image" placeholder="image">
+    <input type="text" name="image" placeholder="Image">
+    <input type="text" name="media" placeholder="Media">
     <input type="text" name="resume" placeholder="Resume">
-    <input type="text" name="statut" placeholder="statut">
+    <input type="text" name="statut" placeholder="Statut">
     <button type="submit">Ajouter</button>
 </form>
 

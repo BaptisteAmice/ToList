@@ -15,13 +15,14 @@ class Oeuvre extends Model
     protected $fillable = [
         'titre',
         'image',
+        'media',
         'resume',
         'statut',
     ];
 
     public function commentaires()
     {
-        return $this->hasMany(Commentaire::class);
+        return $this->morphMany(Commentaire::class, 'commentable');
     }
 
     public function auteurs()

@@ -19,19 +19,16 @@ class CreateOeuvresTable extends Migration
             $table->string('image')->default('');
             $table->string('image_ratio')->default('');
 
-            $table->enum('media', ['Littérature', 'Cinéma', 'Jeux', 'Musique']);
+            $table->string('media'); //->enum('media', ['Littérature', 'Cinéma', 'Jeux', 'Musique']);
             $table->string('sous_media')->nullable();
 
-            $table->enum('statut',['À venir','En cours', 'Terminé']);
+            $table->string('statut'); //->enum('statut',['À venir','En cours', 'Terminé']);
             $table->mediumText('resume');
-            $table->date('date_sortie')->nullable();
-            $table->date('date_sortie_fin')->nullable();
 
-            $table->enum('nom_unite', ['Tome','Chapitre', 'Episode','Niveau','Boss', 'Titre','Album'])->nullable();
-            $table->integer('nombre_unite_mineure')->nullable();
-            $table->integer('duree_unite_mineure')->nullable();
-            $table->integer('nombre_unite_majeure')->nullable();
-            $table->integer('duree_unite_majeure')->nullable();
+
+
+
+            //duree jeu sinon ?
 
             $table->timestamps();
 
@@ -47,6 +44,17 @@ class CreateOeuvresTable extends Migration
             sous type serait peut etre plutot une tbale à part ??
             signalements????
 
+            $table->date('date_sortie')->nullable();
+            $table->date('date_sortie_fin')->nullable();  -> table date
+
+
+
+            $table->string('nom_unite_mineure')->nullable(); //['Tome','Chapitre', 'Episode','Niveau','Boss', 'Titre','Album',Full combo, Succès steam,ps3...]
+            $table->integer('nombre_unite_mineure')->nullable();
+            $table->integer('duree_unite_mineure')->nullable();
+            $table->string('nom_unite_majeure')->nullable();
+            $table->integer('nombre_unite_majeure')->nullable();
+            $table->integer('duree_unite_majeure')->nullable(); -> table unite
             */
 
 

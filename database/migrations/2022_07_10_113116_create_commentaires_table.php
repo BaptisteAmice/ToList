@@ -18,8 +18,8 @@ class CreateCommentairesTable extends Migration
 
             $table->mediumText('contenu');
 
-            $table->foreignId('oeuvre_id')->constrained()->onDelete('cascade');
-
+            $table->integer('commentable_id');
+            $table->string('commentable_type');
 
             $table->timestamps();
         });

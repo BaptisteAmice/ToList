@@ -31,6 +31,9 @@ Route::post('/oeuvres/create',[OeuvreController::class,'store'])->name('oeuvres.
 Route::get('/oeuvre/{id}',[OeuvreController::class,'show'])->whereNumber('id')->name('oeuvres.show');
 Route::get('/oeuvres',[OeuvreController::class,'index'])->name('oeuvres');
 
+Route::get('/register',[OeuvreController::class,'register']);
+
+
 
 
 

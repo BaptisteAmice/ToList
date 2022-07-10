@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Oeuvre;
+use App\Models\Commentaire;
+use App\Models\Auteur;
 use Illuminate\Http\Request;
 
 class OeuvreController extends Controller
@@ -36,6 +38,7 @@ class OeuvreController extends Controller
         Oeuvre::create([
             'titre' => $request->titre,
             'image' => $request->image,
+            'media' => $request->media,
             'resume' => $request->resume,
             'statut' => 'En cours',
         ]);
@@ -44,6 +47,9 @@ class OeuvreController extends Controller
         $oeuvre = Oeuvre::create($request->all());
         return redirect()->route('oeuvres.show', $oeuvre->id);
     }
+
+
+
 /*
     public function edit($id)
     {
@@ -51,4 +57,20 @@ class OeuvreController extends Controller
         return view('oeuvre_edit', compact('oeuvre'));
     }
     */
+
+
+    public function register()
+    {
+        $oeuvre = Oeuvre::find(2);
+        $auteur = Auteur::find(1);
+
+        $comment1 = new Commentaire(['contenu' => 'Ceci est un commentaire1']);
+        $comment2 = new Commentaire(['contenu' => 'Ceci est un commentaire2']);
+        $comment3 = new Commentaire(['contenu' => 'Ceci est un commentaire3']);
+
+        $oeuvre->comments()->save($comment1);
+        $auteur->comments()->saveMany([$comment2, $comment3]);
+
+    }
+
 }

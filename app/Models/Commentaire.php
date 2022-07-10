@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 class Commentaire extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
-    public function oeuvre()
+
+    public function commentable()
     {
-        return $this->belongsTo(Oeuvre::class);
+        return $this->morphTo();
     }
 }
