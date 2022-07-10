@@ -21,7 +21,7 @@ php artisan make:model Truc -m
 
 ### php artisan migrate #creation 
 ### php artisan migrate:reset #suppression
-### php artisan migrate:refresh #creation + suppression
+### php artisan migrate:fresh #creation + suppression
 ### php artisan migrate --path=/database/migrations/truc
 
 ## table intermediaire (relation * - *)

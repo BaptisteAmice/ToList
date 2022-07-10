@@ -23,5 +23,12 @@
     <p>Aucun commentaire</p>
 @endforelse
 
+
+@forelse($oeuvre->auteurs as $auteur)
+    <p>{{$auteur->nom}} | Rôle : {{$auteur->pivot->role}}  </p>
+@empty
+    <p>Aucun auteur renseigné</p>
+@endforelse
+
 @endsection
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePivotTableOeuvreAuteur extends Migration
+class CreatePivotTableAuteurOeuvre extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePivotTableOeuvreAuteur extends Migration
      */
     public function up()
     {
-        Schema::create('oeuvre_auteur', function (Blueprint $table) {
+        Schema::create('auteur_oeuvre', function (Blueprint $table) {
             $table->id();
             $table->foreignId('oeuvre_id')->constrained()->onDelete('cascade');
             $table->foreignId('auteur_id')->constrained()->onDelete('cascade');
