@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+header
+{
+    background-color: gray;
+    padding: 20px;
+    text-align: center;
+}
