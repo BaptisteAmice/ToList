@@ -15,6 +15,21 @@ class CreateAuteursTable extends Migration
     {
         Schema::create('auteurs', function (Blueprint $table) {
             $table->id();
+
+            $table->string('nom')->nullable();
+            $table->string('prenoms')->nullable();
+            $table->string('nom_natif')->nullable();
+            $table->string('pseudonyme')->nullable();
+
+
+            $table->date('genre')->nullable();
+            $table->date('nationalite')->nullable();
+            $table->date('naissance')->nullable();
+            $table->date('mort')->nullable();
+
+            $table->mediumText('description')->nullable();
+
+
             $table->timestamps();
         });
     }

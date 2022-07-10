@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentairesTable extends Migration
+class CreatePivotTableOeuvreAuteur extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateCommentairesTable extends Migration
      */
     public function up()
     {
-        Schema::create('commentaires', function (Blueprint $table) {
+        Schema::create('oeuvre_auteur', function (Blueprint $table) {
             $table->id();
-
-            $table->mediumText('contenu');
-
             $table->foreignId('oeuvre_id')->constrained()->onDelete('cascade');
+            $table->foreignId('auteur_id')->constrained()->onDelete('cascade');
+
+
+            $table->string('role')->nullable();
+
 
 
             $table->timestamps();
@@ -32,6 +34,6 @@ class CreateCommentairesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commentaires');
+        Schema::dropIfExists('pivot_table_oeuvre_auteur');
     }
 }

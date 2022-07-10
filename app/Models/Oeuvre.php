@@ -13,7 +13,7 @@ class Oeuvre extends Model
         'titre',
         'image',
         'resume',
-        'status',
+        'statut',
     ];
 
     public function commentaires()

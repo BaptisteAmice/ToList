@@ -9,7 +9,7 @@
 <p>{{$oeuvre->resume}}</p>
 
 <ul>
-    <li>Status : {{$oeuvre->status}}  </li>
+    <li>statut : {{$oeuvre->statut}}  </li>
     <li></li>
     <li></li>
     <li></li>

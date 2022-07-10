@@ -24,6 +24,9 @@ php artisan make:model Truc -m
 ### php artisan migrate:refresh #creation + suppression
 ### php artisan migrate --path=/database/migrations/truc
 
+## table intermediaire (relation * - *)
+### php artisan make:migration create_pivot_table_truc1_truc2
+
 
 
 # factory 

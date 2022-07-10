@@ -10,7 +10,7 @@
     <input type="text" name="titre" placeholder="Titre">
     <input type="text" name="image" placeholder="image">
     <input type="text" name="resume" placeholder="Resume">
-    <input type="text" name="status" placeholder="Status">
+    <input type="text" name="statut" placeholder="statut">
     <button type="submit">Ajouter</button>
 </form>
 

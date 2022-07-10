@@ -19,7 +19,7 @@ class OeuvreFactory extends Factory
             'image_ratio' => '',
             'media' => 'Jeux',
             'sous_media' => 'Jeux vidéo',
-            'status' => 'En cours',
+            'statut' => 'En cours',
             'resume' => 'Terraria est un jeu vidéo',
             'date_sortie' => null,
             'date_sortie_fin' => null,

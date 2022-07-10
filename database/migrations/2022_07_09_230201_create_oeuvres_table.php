@@ -22,7 +22,7 @@ class CreateOeuvresTable extends Migration
             $table->enum('media', ['Littérature', 'Cinéma', 'Jeux', 'Musique']);
             $table->string('sous_media')->nullable();
 
-            $table->string('status')->enum(['À venir','En cours', 'Terminé']);
+            $table->enum('statut',['À venir','En cours', 'Terminé']);
             $table->mediumText('resume');
             $table->date('date_sortie')->nullable();
             $table->date('date_sortie_fin')->nullable();
@@ -40,7 +40,7 @@ class CreateOeuvresTable extends Migration
             titres alternatifs -> titres_alternatifs(titre_alternatif,id_oeuvre)
             auteurs -> auteurs() -> auteurs_oeuvres(id_auteur,id_oeuvre,role)
             genres -> genres(id,intitule) -> genre_oeuvres(id_genre,id_oeuvre)
-            note,favoris,completion -> utilisateur_oeuvre(id_oeuvre,id_utilisateur,score,favoris,completion[A commencer,En cours,Terminé,En attente, Abandonné, Infini])
+            note,favoris,completion,support -> utilisateur_oeuvre(id_oeuvre,id_utilisateur,score,favoris,completion[A commencer,En cours,Terminé,En attente, Abandonné, Sans fin,support])
             oeuvres liees -> oeuvres_liees(id_oeuvre,id_oeuvre_liee,lien[prequel/sequel,spin-off/parent,adaptation/original])
             commentaires -> commentaires(id_oeuvre,id_utilisateur,commentaire,date)
             series -> series(id,intitule) -> series_oeuvres(id_serie,id_oeuvre)

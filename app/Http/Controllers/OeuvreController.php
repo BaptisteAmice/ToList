@@ -37,7 +37,7 @@ class OeuvreController extends Controller
             'titre' => $request->titre,
             'image' => $request->image,
             'resume' => $request->resume,
-            'status' => $request->status,
+            'statut' => 'En cours',
         ]);
 
         dd('done');
