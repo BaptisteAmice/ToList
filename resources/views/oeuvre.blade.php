@@ -15,5 +15,13 @@
     <li></li>
 </ul>
 
+<hr>
+<h2>Commentaires</h2>
+@forelse($oeuvre->commentaires as $commentaire)
+    <p>{{$commentaire->contenu}} | créé le {{$commentaire->created_at->format('d/m/Y')}}</p>
+@empty
+    <p>Aucun commentaire</p>
+@endforelse
+
 @endsection
 

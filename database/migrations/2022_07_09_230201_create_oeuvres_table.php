@@ -44,6 +44,7 @@ class CreateOeuvresTable extends Migration
             oeuvres liees -> oeuvres_liees(id_oeuvre,id_oeuvre_liee,lien[prequel/sequel,spin-off/parent,adaptation/original])
             commentaires -> commentaires(id_oeuvre,id_utilisateur,commentaire,date)
             series -> series(id,intitule) -> series_oeuvres(id_serie,id_oeuvre)
+            sous type serait peut etre plutot une tbale à part ??
             signalements????
 
             */

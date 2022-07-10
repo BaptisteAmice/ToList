@@ -15,4 +15,9 @@ class Oeuvre extends Model
         'resume',
         'status',
     ];
+
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
 }
